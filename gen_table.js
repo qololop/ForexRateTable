@@ -1,3 +1,5 @@
+import Decimal from "./decimal.mjs";
+
 function findEven(e) {
     return Math.floor(e) % 2 === 0;
 }
@@ -67,7 +69,9 @@ async function fetchForexRates() {
         // Create a new variable: modifiedRates, adding 10.0002 to each original value.
         const mod = {};
         for (const currency in ori) {
-            mod[currency] = Number(ori[currency]) + 10.0002;
+            const oriValue = new Decimal(ori[currency]);
+            const modValue = oriValue.plus(10.0002);
+            mod[currency] = modValue.toString();
         }
 
         // Build the table using both original and modified rates.
