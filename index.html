@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forex Rates Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      th,
+      td {
+        border: 2px solid #050202;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #dbd8d8;
+      }
+      /* Red border style for cells that meet conditions */
+      .red-border {
+        /*border: 2px solid red !important;*/
+        outline: 3px solid red;
+        outline-offset: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Forex Rates Table</h1>
+    <table id="forexTable">
+      <thead>
+        <tr>
+          <th>Currency</th>
+          <th>Original Rate</th>
+          <th>Modified Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be populated dynamically -->
+      </tbody>
+    </table>
+
+    <script src="gen_table.js"></script>
+  </body>
+</html>
