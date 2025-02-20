@@ -1,7 +1,11 @@
 import Decimal from "./decimal.mjs";
 
 function findEven(e) {
-    return Math.floor(e) % 2 === 0;
+    // Check the last digit of the number.
+    const eStr = e.toString();
+    const lastDigit = eStr[eStr.length - 1];
+    // If the last digit is even, return true.
+    return lastDigit % 2 === 0;
 }
 
 function createTable(ori, mod) {
@@ -11,7 +15,7 @@ function createTable(ori, mod) {
     // Loop each currency in original rates.
     for (const currency in ori) {
         // Get values from both original and modified rates for this currency.
-        const oriValue = ori[currency];
+        const oriValue = new Decimal(ori[currency]);
         const modValue = mod[currency];
 
         // Create a new row.
